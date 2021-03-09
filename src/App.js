@@ -1,17 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 import FilterForm from './components/FilterForm/FilterForm';
 import SortDropDown from './components/SortDropDown/SortDropDown';
-import UserRow from './components/UserRow/UserRow';
+import UserTable from './components/UserTable/UserTable';
 
 function App() {
   return (
-    <div className="App">
-      <h1>User Directory</h1>
+    <div className="container">
 
-      <FilterForm />
-      <SortDropDown />
-      <UserRow />
+      <div className="row">
+        <div className="col-12">
+          <h1>User Directory</h1>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-8">
+          <FilterForm />
+        </div>
+        <div className="col-4">
+          <SortDropDown />
+        </div>
+
+      </div>
+
+      <div className="row">
+        <div className="col-12">
+          <UserTable />
+        </div>
+      </div>
+
     </div>
   );
 }
