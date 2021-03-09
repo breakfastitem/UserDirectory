@@ -2,8 +2,13 @@ import './App.css';
 import FilterForm from './components/FilterForm/FilterForm';
 import SortDropDown from './components/SortDropDown/SortDropDown';
 import UserTable from './components/UserTable/UserTable';
+import getNames from './utils/API';
 
-function App() {
+function App() { 
+  getNames();
+
+
+
   return (
     <div className="container">
 
