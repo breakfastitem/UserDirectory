@@ -3,6 +3,8 @@ import UserRow from "../UserRow/UserRow";
 
 function UserTable(props) {
 
+    console.log(props.users);
+
     let propsJSX = <UserRow />;
     let id = 0;
     if (props.users !== undefined) {

@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 
-function FilterForm() {
+function FilterForm(props) {
+
+    const [value,setValue] = useState("");
 
     return (
         <form>
-        <input placeholder="filter" id="filter">
+        <input placeholder="filter" value={value} onChange={(event)=>{
+            setValue(event.target.value);
+        }} id="filter">
         </input>
-        <button>filter</button>
+        <button onClick={(event)=>{
+            event.preventDefault();
+            props.filterHandler(value.toLowerCase(),"first")
+            }}>Filter</button>
         </form>
     );
 }
