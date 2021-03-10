@@ -43,7 +43,7 @@ function App() {
         break;
       case "age":
         setUserData(mainData.filter(user => {
-          return user.dob === filterValue;
+          return user.dob === Number(filterValue);
         }))
         break;
       default:
