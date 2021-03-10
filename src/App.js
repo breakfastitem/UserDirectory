@@ -3,10 +3,25 @@ import FilterForm from './components/FilterForm/FilterForm';
 import SortDropDown from './components/SortDropDown/SortDropDown';
 import UserTable from './components/UserTable/UserTable';
 import getNames from './utils/API';
+import { useState, useEffect } from "react";
 
-function App() { 
-  getNames();
+function App() {
+  const [userData, setUserData] = useState([]);
 
+
+
+  useEffect(() => {
+
+    getNames()
+      .then(response => response.json())
+      .then(data => {
+        setUserData(data);
+      })
+      .catch(err => {
+        throw err;
+      })
+      
+  }, []);
 
 
   return (
@@ -30,7 +45,7 @@ function App() {
 
       <div className="row">
         <div className="col-12">
-          <UserTable />
+          <UserTable users={userData} />
         </div>
       </div>
 
