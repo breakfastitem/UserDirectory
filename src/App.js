@@ -24,6 +24,9 @@ function App() {
 
   }, []);
 
+  useEffect(()=>{
+
+  });
   /**
    * click handlers for sort and filter options
    */
@@ -53,6 +56,27 @@ function App() {
 
   }
 
+  
+
+  function sortHandler(sortCase) {
+    let tempArray;
+
+    switch (sortCase) {
+      case "age":
+        tempArray=[...mainData].sort((a, b) => {
+          console.log(b.dob.age);
+          return a.dob.age - b.dob.age;
+        });
+        setUserData(tempArray);
+        break;
+      default:
+        console.log("Unknown case");
+        break;
+
+    }
+
+  }
+
 
   return (
     <div className="container text-center">
@@ -65,7 +89,7 @@ function App() {
 
       <div className="row">
         <div className="col-12">
-          <FilterForm filterHandler={filterByparam} />
+          <FilterForm sortHandler={sortHandler} filterHandler={filterByparam} />
         </div>
       </div>
 

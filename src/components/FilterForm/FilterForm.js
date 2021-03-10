@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import SortDropDown from "../SortDropDown/SortDropDown";
 
-function FilterForm({ filterHandler }) {
+function FilterForm({ filterHandler,sortHandler }) {
 
     const [value, setValue] = useState("");
     const [type, setType] = useState("first");
 
     return (
-        
+
         <form>
             <input placeholder="filter" value={value} onChange={(event) => {
                 setValue(event.target.value);
@@ -15,11 +15,16 @@ function FilterForm({ filterHandler }) {
             </input>
             <button onClick={(event) => {
                 event.preventDefault();
-                filterHandler(value.toLowerCase(), type)
+                filterHandler(value.toLowerCase(), type);
             }}>Filter</button>
 
-            <SortDropDown type={type} setType={setType}/>
-    
+            <button onClick={(event) => {
+                event.preventDefault();
+                sortHandler("age");
+            }}>Sort By Age</button>
+
+            <SortDropDown type={type} setType={setType} />
+
         </form>
 
     );
