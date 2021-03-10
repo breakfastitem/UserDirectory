@@ -1,11 +1,12 @@
 import React from "react";
 
-function UserRow(){
+function UserRow({age,first,last,city}){
     return(
         <tr>
-            <td>Andrew</td>
-            <td>Ehrman</td>
-            <td>Web Development</td>
+            <td>{first}</td>
+            <td>{last}</td>
+            <td>{city}</td>
+            <td>{age}</td>
         </tr>
     );
 }

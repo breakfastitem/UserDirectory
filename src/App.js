@@ -20,7 +20,7 @@ function App() {
       .catch(err => {
         throw err;
       })
-      
+
   }, []);
 
 
@@ -45,7 +45,7 @@ function App() {
 
       <div className="row">
         <div className="col-12">
-          <UserTable users={userData} />
+          <UserTable users={userData.results} />
         </div>
       </div>
 

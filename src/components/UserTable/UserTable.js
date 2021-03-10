@@ -3,7 +3,14 @@ import UserRow from "../UserRow/UserRow";
 
 function UserTable(props) {
 
-    console.log(props.users);
+    let propsJSX = <UserRow />;
+    let id = 0;
+    if (props.users !== undefined) {
+        propsJSX = props.users.map(user => {
+            id++;
+            return <UserRow key={id} age={user.dob.age} first={user.name.first} last={user.name.last} city={user.location.city} />
+        })
+    }
 
     return (
         <table>
@@ -11,12 +18,12 @@ function UserTable(props) {
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Job</th>
+                    <th>City</th>
+                    <th>Age</th>
                 </tr>
             </thead>
             <tbody>
-                {/*Place table row information*/}
-                <UserRow />
+                {propsJSX}
             </tbody>
 
         </table>
