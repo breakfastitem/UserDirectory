@@ -15,7 +15,7 @@ This repository contains a React Web application. This app allows a user look up
 ### Main page
     Displays a table containing user data and a filter function
 
-![Main Image](./main.jpeg)
+![Main Image](./main.JPG)
 
 ## Installation
 Downloading respository. In directory run npm install.
