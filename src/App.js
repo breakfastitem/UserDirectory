@@ -1,7 +1,7 @@
 import './App.css';
 import FilterForm from './components/FilterForm/FilterForm';
 import UserTable from './components/UserTable/UserTable';
-import getNames from './utils/API';
+import getUsers from './utils/API';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
 
-    getNames()
+    getUsers()
       .then(response => response.json())
       .then(data => {
         setUserData(data.results);
