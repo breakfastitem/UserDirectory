@@ -1,15 +1,25 @@
 import React from "react";
 import "./styles.css";
 
-function SortDropDown(){
-    return(
+function SortDropDown({ type, setType }) {
+
+
+
+    return (
         <div className="dropdown">
-            <button className="drop-button">FirstName</button>
-            <div className="drop-content">
-                <p>First Name</p>
-                <p>Last Name</p>
-                <p>Job</p>
-            </div>
+            <p> Filter By {type}</p>
+            <button className="drop-button" onClick={(e) => {
+                e.preventDefault();
+                setType("first");
+            }}>First Name</button>
+            <button className="drop-button" onClick={(e) => {
+                e.preventDefault();
+                setType("last");
+            }}>Last Name</button>
+            <button className="drop-button" onClick={(e) => {
+                e.preventDefault();
+                setType("age");
+            }}>Age</button>
         </div>
     );
 }

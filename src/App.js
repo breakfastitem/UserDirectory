@@ -1,6 +1,5 @@
 import './App.css';
 import FilterForm from './components/FilterForm/FilterForm';
-import SortDropDown from './components/SortDropDown/SortDropDown';
 import UserTable from './components/UserTable/UserTable';
 import getNames from './utils/API';
 import { useState, useEffect } from "react";
@@ -56,7 +55,7 @@ function App() {
 
 
   return (
-    <div className="container">
+    <div className="container text-center">
 
       <div className="row">
         <div className="col-12">
@@ -65,13 +64,9 @@ function App() {
       </div>
 
       <div className="row">
-        <div className="col-8">
-          <FilterForm filterHandler={filterByparam}/>
+        <div className="col-12">
+          <FilterForm filterHandler={filterByparam} />
         </div>
-        <div className="col-4">
-          <SortDropDown />
-        </div>
-
       </div>
 
       <div className="row">
